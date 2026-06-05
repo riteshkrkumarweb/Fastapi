@@ -16,16 +16,10 @@ def read_root():
 def aaaabout():
     return {"bout": "about"}
 
-
-@app.get('/cbout')
-def vt():
-    return {"viduu": "Vidya"}
-
 @app.get('/view')
 def views ():
     data  = load_data ()
     return data
-
 
 @app.get('/patient/{patient_id}')
 def patient_id(patient_id:int):
