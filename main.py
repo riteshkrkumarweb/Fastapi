@@ -34,7 +34,7 @@ def patient_id(patient_id:str):
         return {'message':'Patinent not found'}
     
 
-    
+@app
 
 
 
