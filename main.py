@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 import json
 
 app = FastAPI()
@@ -31,8 +31,15 @@ def patient_id(patient_id:str):
     if patient_id in data :
         return data[patient_id]
     else:
-        return {'message':'Patinent not found'}
-    
+       # return{'error':'Patient not found '}
+        raise HTTPException(status_code=404,detail='Patient Not Found') 
+        # HTTPException is a special built-in exception in FastAPI used to return custom HTTP error responses
+        # when something goes wrong in your API.
+        #Instead of returning a normal JSON or crashing the server, you can gracefully raise an error with:
+        # a proper HTTP status code (like 404, 400, 403, etc.)
+        #  a custom error message
+        # (optional) extra headers
+        
 
 
 
