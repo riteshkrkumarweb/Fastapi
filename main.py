@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException , Path , Query
 import json
 
 app = FastAPI()
@@ -24,7 +24,9 @@ def views ():
 
 
 @app.get('/patient/{patient_id}')
-def patient_id(patient_id:str):
+def patient_id(patient_id:str=Path(...,
+    description='Enter the patient id to retrive from the DB',
+    example='P001')): # Path Sets rules and information for values taken from the URL path
     #load all data 
     data = load_data()
 
@@ -32,13 +34,31 @@ def patient_id(patient_id:str):
         return data[patient_id]
     else:
        # return{'error':'Patient not found '}
-        raise HTTPException(status_code=404,detail='Patient Not Found') 
-        # HTTPException is a special built-in exception in FastAPI used to return custom HTTP error responses
-        # when something goes wrong in your API.
-        #Instead of returning a normal JSON or crashing the server, you can gracefully raise an error with:
-        # a proper HTTP status code (like 404, 400, 403, etc.)
-        #  a custom error message
-        # (optional) extra headers
+        raise HTTPException(status_code=404,detail='Patient Not Found') # HTTPException: Sends a clear error message when a request fails 
+    
+@app.get('/sort')
+def sort_patients(sort_by: str = Query(...,description='Sort on the Basis of name , age , city , gender'),
+                  order:str=Query('asc',description='sort in acending or desending order ')):
+    
+    valid_fields = ['name','age','city','gender','blood_group']
+
+    if sort_by not in valid_fields:
+        raise HTTPException(status_code=404, detail=f'Invalid field selected from the {valid_fields}')
+
+    if order not in ['asc','des']:
+        raise HTTPException(status_code=404,detail='Invalid order is selected between asc and dsc') 
+    
+    data = load_data()
+    sort_order = True if order == 'des' else False
+    sorted_data = sorted(data.values(), key=lambda x: x.get(sort_by, 0), reverse=sort_order)
+
+    return sorted_data
+
+
+
+    
+
+        
         
 
 
