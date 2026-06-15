@@ -55,3 +55,16 @@
 
     One-Line Summary
     Query() is used to validate and document values passed after ? in a URL.
+
+# Most Common HTTP Status Codes
+    * 200 → OK (Request successful)
+    * 201 → Created (Resource created successfully)
+    * 400 → Bad Request (Invalid input from client)
+    * 401 → Unauthorized (Authentication required)
+    * 403 → Forbidden (Access denied)
+    * 404 → Not Found (Resource does not exist)
+    * 405 → Method Not Allowed (Wrong HTTP method used)
+    * 409 → Conflict (Resource already exists)
+    * 422 → Unprocessable Entity (Validation error)
+    * 500 → Internal Server Error (Server-side error)
+
