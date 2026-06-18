@@ -1,25 +1,25 @@
 {
   "P001": {
-    "name": "Riya Roy",
-    "age": 54,
+    "name": "Vidya Maurya",
+    "age": 20,
+    "height_m": 1.62,
+    "weight_kg": 59.0,
     "gender": "Female",
     "city": "Delhi",
     "blood_group": "A-",
-    "height_m": 1.62,
-    "weight_kg": 59,
-    "bmi": 22.5,
+    "bmi": 22.48,
     "verdict": "Normal Weight"
   },
   "P002": {
-    "name": "Ananya Sharma",
-    "age": 65,
-    "gender": "Female",
+    "name": "Bittu Don",
+    "age": 21,
+    "height_m": 1.58,
+    "weight_kg": 20.0,
+    "gender": "Male",
     "city": "Hyderabad",
     "blood_group": "A+",
-    "height_m": 1.58,
-    "weight_kg": 69,
-    "bmi": 27.6,
-    "verdict": "Overweight"
+    "bmi": 8.01,
+    "verdict": "Underweight"
   },
   "P003": {
     "name": "Vivek Patel",
@@ -118,17 +118,6 @@
     "city": "Varanshi",
     "blood_group": "B+",
     "bmi": 19.38,
-    "verdict": "Normal Weight"
-  },
-  "P012": {
-    "name": "Vidya Singh",
-    "age": 19,
-    "height_m": 1.71,
-    "weight_kg": 60.0,
-    "gender": "Female",
-    "city": "Varanshi",
-    "blood_group": "A+",
-    "bmi": 20.52,
     "verdict": "Normal Weight"
   }
 }
