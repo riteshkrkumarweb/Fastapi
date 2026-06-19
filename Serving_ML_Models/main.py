@@ -81,4 +81,4 @@ def predict_user(data:UserInput):
         
         prediction = model.predict(input_df)
 
-        return JSONResponse(status_code=200,content={'predicted_catorgary': prediction})
+        return JSONResponse(status_code=200,content={'predicted_category': str(prediction[0])})
